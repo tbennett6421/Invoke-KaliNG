@@ -5,3 +5,4 @@ base:
     - core/config/software
     - core/config/ssh/sshd
     - core/config/ssh/sshd_config
+    - kali/dirs

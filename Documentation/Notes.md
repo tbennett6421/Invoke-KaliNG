@@ -58,3 +58,10 @@ dpkg-reconfigure openssh-server
 systemctl enable ssh
 systemctl start ssh
 ```
+## Kali-NG related
+
+### Creating directory structure
+```sh
+mkdir -p /kaliNG/git/pyenv
+ln -s /kaliNG/git/pyenv /kaliNG/.pyenv
+```
