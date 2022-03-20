@@ -15,6 +15,7 @@
     - pkgs:
       - openssh-server
       - nfs-common
+      - anacron
 
 {{state_id}}//core.packages:
   pkg.installed:
