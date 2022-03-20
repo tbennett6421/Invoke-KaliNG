@@ -72,7 +72,7 @@
     - name: pyenv install 2.7.18
     - creates: /kaliNG/.pyenv/versions/2.7.18
 
-{{state_id}}//git-pyenv-python2.7.18:
+{{state_id}}//git-pyenv-python3.9.10:
   cmd.run:
-    - name: pyenv install 2.7.18
-    - creates: /kaliNG/.pyenv/versions/2.7.18
+    - name: pyenv install 3.9.10
+    - creates: /kaliNG/.pyenv/versions/3.9.10
