@@ -60,7 +60,7 @@
       - file: {{state_id}}//{{f}}.config_init
 {% endfor %}
 
-{{state_id}}//git-pyenv:
+{{state_id}}//git-pyenv-virtualenv:
   git.cloned:
     - name: https://github.com/pyenv/pyenv-virtualenv.git
     - target: /kaliNG/git/pyenv/plugins/pyenv-virtualenv
