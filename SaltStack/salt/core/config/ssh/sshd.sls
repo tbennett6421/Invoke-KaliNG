@@ -40,3 +40,4 @@
       - sshd -t
     - watch:
       - file: {{state_id}}//dir-sshd-bugfix
+      - cmd: {{state_id}}//regen-ssh-keys
