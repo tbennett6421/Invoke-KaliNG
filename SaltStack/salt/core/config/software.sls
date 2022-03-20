@@ -39,9 +39,11 @@
   pkg.installed:
     - pkgs:
       - autoconf
+      - build-essential
       - gcc
       - gcc-multilib
       - gcc-mingw-w64-i686
+      - make
       - wine
       - python2-dev
       - python3-dev
