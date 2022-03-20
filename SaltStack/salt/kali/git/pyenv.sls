@@ -2,7 +2,7 @@
 
 {{state_id}}//git-pyenv:
   git.cloned:
-    - name: git@github.com:pyenv/pyenv.git
+    - name: https://github.com/pyenv/pyenv.git
     - target: /kaliNG/git/pyenv
     - user: root
 
