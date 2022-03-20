@@ -17,9 +17,10 @@
 
 {% for f in ['/root/.zprofile','/root/.profile'] %}
 {{state_id}}//{{f}}_pyenv-root:
-  file.replace:
+  file.line:
     - name: {{f}}
-    - repl: export PYENV_ROOT="/KaliNG/.pyenv"
-    - append_if_not_found: True
-    - backup: bkup
+    - content: export PYENV_ROOT="/KaliNG/.pyenv"
+    - mode: insert
+    - location: end
+    - backup: True
 {% endfor %}
