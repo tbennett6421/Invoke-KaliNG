@@ -1,9 +1,15 @@
 {% set state_id = "core@config/ssh/sshd_config.sls" %}
 
+# sshd -t
+# echo $?
+#   0 on success
+#   255 on failure
+
 # We need sshd -t to work, fix [Missing privilege separation directory: /run/sshd]
 # create the directory if missing and restart sshd
 {{state_id}}//dir-sshd-bugfix:
   file.directory:
+    - name: /var/run/sshd
     - user: root
     - group: root
     - mode: 755
@@ -70,6 +76,8 @@
   service.running:
     - name: ssh
     - enable: True
+    - onlyif:
+      - sshd -t
     - watch:
       - file: {{state_id}}//dir-sshd-bugfix
       - file: {{state_id}}//sshd.config_init
