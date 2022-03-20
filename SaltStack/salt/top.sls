@@ -7,3 +7,4 @@ base:
     - core/config/ssh/sshd_config
     - kali/dirs
     - kali/git/pyenv
+    - kali/pip

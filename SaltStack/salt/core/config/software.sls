@@ -57,8 +57,8 @@
       - make
       - python2-dev
       - python3-dev
+      - python3-pip
       - tk-dev
       - wine
       - xz-utils
       - zlib1g-dev
-

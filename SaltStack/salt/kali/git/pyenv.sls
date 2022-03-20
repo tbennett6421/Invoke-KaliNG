@@ -89,7 +89,8 @@
     - name: pyenv virtualenv 3.9.10 kali-py3
     - creates: /kaliNG/.pyenv/versions/kali-py3
 
+# set global python2 and python3 using our new venvs
 {{state_id}}//git-pyenv-set-global:
   cmd.run:
-    - name: pyenv global kali-py3 && touch /etc/salt/.salt-token-pyenv-global-set
+    - name: pyenv global kali-py3 kali-py2 && touch /etc/salt/.salt-token-pyenv-global-set
     - creates: /etc/salt/.salt-token-pyenv-global-set
