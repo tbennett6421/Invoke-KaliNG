@@ -23,4 +23,21 @@
     - mode: insert
     - location: end
     - backup: True
+    - quiet: True
+{{state_id}}//{{f}}_pyenv-pathedit:
+  file.line:
+    - name: {{f}}
+    - content: export PATH="$PYENV_ROOT/bin:$PATH"
+    - mode: insert
+    - location: end
+    - backup: True
+    - quiet: True
+{{state_id}}//{{f}}_pyenv-init:
+  file.line:
+    - name: {{f}}
+    - content: eval "$(pyenv init --path)"
+    - mode: insert
+    - location: end
+    - backup: True
+    - quiet: True
 {% endfor %}
