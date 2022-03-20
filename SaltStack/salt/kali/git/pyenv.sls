@@ -56,6 +56,7 @@
           export PATH="$PYENV_ROOT/bin:$PATH"
           eval "$(pyenv init --path)"
           eval "$(pyenv init -)"
+          eval "$(pyenv virtualenv-init -)"
     - require_in:
       - file: {{state_id}}//{{f}}.config_init
 {% endfor %}
