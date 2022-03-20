@@ -45,4 +45,16 @@ apt-get install -y autoconf build-essential gcc gcc-multilib gcc-mingw-w64-i686 
 ### Configuration of sshd.config
 @todo document this
 
-No documentation currently available... read the code
+Documentation may be incomplete... read the code
+
+#### Regen SSH keys
+```sh
+rm -fv /etc/ssh/ssh_host_*
+dpkg-reconfigure openssh-server
+```
+
+#### Enable/Start SSHD
+```sh
+systemctl enable ssh
+systemctl start ssh
+```

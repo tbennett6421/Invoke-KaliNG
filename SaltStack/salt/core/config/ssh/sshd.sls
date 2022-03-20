@@ -28,8 +28,8 @@
 # Regenerate SSH-Keys at least once
 {{state_id}}//regen-ssh-keys:
   cmd.run:
-    - name: rm -fv /etc/ssh/ssh_host_* && dpkg-reconfigure openssh-server && touch /etc/salt/.salt-token-sshkeys-purged
-    - creates: /etc/salt/.salt-token-sshkeys-purged
+    - name: rm -fv /etc/ssh/ssh_host_* && dpkg-reconfigure openssh-server && touch /etc/salt/.salt-token-sshkeys-regen
+    - creates: /etc/salt/.salt-token-sshkeys-regen
 
 ## Start and enable ssh service, watch for changes
 {{state_id}}//sshd_service:
