@@ -66,3 +66,13 @@
     - name: https://github.com/pyenv/pyenv-virtualenv.git
     - target: /kaliNG/git/pyenv/plugins/pyenv-virtualenv
     - user: root
+
+{{state_id}}//git-pyenv-python2.7.18:
+  cmd.run:
+    - name: pyenv install 2.7.18
+    - creates: /kaliNG/.pyenv/versions/2.7.18
+
+{{state_id}}//git-pyenv-python2.7.18:
+  cmd.run:
+    - name: pyenv install 2.7.18
+    - creates: /kaliNG/.pyenv/versions/2.7.18
