@@ -30,7 +30,7 @@
     - name: {{state_id}}//{{f}}.config_content
     - filename: {{f}}
     - text: |
-          export PYENV_ROOT="/KaliNG/.pyenv"
+          export PYENV_ROOT="/kaliNG/.pyenv"
           export PATH="$PYENV_ROOT/bin:$PATH"
           eval "$(pyenv init --path)"
     - require_in:
