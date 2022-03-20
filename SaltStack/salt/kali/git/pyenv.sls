@@ -91,5 +91,5 @@
 
 {{state_id}}//git-pyenv-set-global:
   cmd.run:
-    - name: pyenv global kali-py3
+    - name: pyenv global kali-py3 && touch /etc/salt/.salt-token-pyenv-global-set
     - creates: /etc/salt/.salt-token-pyenv-global-set
