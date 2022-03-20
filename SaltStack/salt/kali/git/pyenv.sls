@@ -76,3 +76,14 @@
   cmd.run:
     - name: pyenv install 3.9.10
     - creates: /kaliNG/.pyenv/versions/3.9.10
+
+{{state_id}}//git-pyenv-python2-venv:
+  cmd.run:
+    - name: pyenv virtualenv 2.7.18 kali-py2
+    - creates: /kaliNG/.pyenv/versions/kali-py2
+
+{{state_id}}//git-pyenv-python2-venv:
+  cmd.run:
+    - name: pyenv virtualenv 3.9.10 kali-py3
+    - creates: /kaliNG/.pyenv/versions/kali-py3
+
