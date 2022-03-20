@@ -16,28 +16,23 @@
     - makedirs: True
 
 {% for f in ['/root/.zprofile','/root/.profile'] %}
-{{state_id}}//{{f}}_pyenv-root:
-  file.line:
+{{state_id}}//{{f}}.config_init:
+  file.blockreplace:
     - name: {{f}}
-    - content: export PYENV_ROOT="/KaliNG/.pyenv"
-    - mode: insert
-    - location: end
-    - backup: True
-    - quiet: True
-{{state_id}}//{{f}}_pyenv-pathedit:
-  file.line:
-    - name: {{f}}
-    - content: export PATH="$PYENV_ROOT/bin:$PATH"
-    - mode: insert
-    - location: end
-    - backup: True
-    - quiet: True
-{{state_id}}//{{f}}_pyenv-init:
-  file.line:
-    - name: {{f}}
-    - content: eval "$(pyenv init --path)"
-    - mode: insert
-    - location: end
-    - backup: True
-    - quiet: True
+    - marker_start: "## BEGIN saltstack modified config: <pyenv> -DO-NOT-EDIT- --"
+    - marker_end: "## END saltstack modified config: <pyenv> -DO-NOT-EDIT- --"
+    - append_if_not_found: True
+    - show_changes: True
+    - backup: .salt.bkup
+
+{{state_id}}//{{f}}.config_content:
+  file.accumulated:
+    - name: {{state_id}}//{{f}}.config_content
+    - filename: {{f}}
+    - text: |
+          export PYENV_ROOT="/KaliNG/.pyenv"
+          export PATH="$PYENV_ROOT/bin:$PATH"
+          eval "$(pyenv init --path)"
+    - require_in:
+      - file: {{state_id}}//{{f}}.config_init
 {% endfor %}
