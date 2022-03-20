@@ -1,30 +1,5 @@
 {% set state_id = "core@config/ssh/sshd_config.sls" %}
 
-# sshd -t
-# echo $?
-#   0 on success
-#   255 on failure
-
-# We need sshd -t to work, fix [Missing privilege separation directory: /run/sshd]
-# create the directory if missing and restart sshd
-{{state_id}}//dir-sshd-bugfix:
-  file.directory:
-    - name: /var/run/sshd
-    - user: root
-    - group: root
-    - mode: 755
-    - makedirs: True
-
-# Ensure this is fixed on boot
-# https://askubuntu.com/questions/1109934/ssh-server-stops-working-after-reboot-caused-by-missing-var-run-sshd/1110843#1110843
-{{state_id}}//cron-sshd-bugfix:
-  cron.present:
-    - name: mkdir -p -m0755 /var/run/sshd && systemctl restart ssh.service
-    - user: root
-    - special: '@reboot'
-    - comment: 'On reboot: Ensure priviledge seperation directory exists'
-    - identifier: "bugfix--sshd-priviledge-seperation-dir"
-
 {{state_id}}//sftp_subsystem:
   file.replace:
     - name: '/etc/ssh/sshd_config'
@@ -79,7 +54,6 @@
     - onlyif:
       - sshd -t
     - watch:
-      - file: {{state_id}}//dir-sshd-bugfix
       - file: {{state_id}}//sftp_subsystem
       - file: {{state_id}}//authorized_keys
       - file: {{state_id}}//sshd.config_init
