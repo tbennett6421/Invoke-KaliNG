@@ -33,6 +33,7 @@
   pkg.installed:
     - pkgs:
       - eog
+      - code-oss
 
 {{state_id}}//build-tools.packages:
   pkg.installed:
@@ -42,3 +43,5 @@
       - gcc-multilib
       - gcc-mingw-w64-i686
       - wine
+      - python2-dev
+      - python3-dev
