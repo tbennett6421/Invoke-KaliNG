@@ -28,7 +28,7 @@
 {{state_id}}//sftp_subsystem:
   file.replace:
     - name: '/etc/ssh/sshd_config'
-    - pattern: '.*Subsystem sftp.*'
+    - pattern: '.*Subsystem.*sftp.*'
     - repl: 'Subsystem sftp internal-sftp -f AUTH -l VERBOSE'
     - show_changes: true
     - backup: .salt.bkup
@@ -80,4 +80,6 @@
       - sshd -t
     - watch:
       - file: {{state_id}}//dir-sshd-bugfix
+      - file: {{state_id}}//sftp_subsystem
+      - file: {{state_id}}//authorized_keys
       - file: {{state_id}}//sshd.config_init
