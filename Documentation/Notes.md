@@ -41,3 +41,8 @@ apt-get install -y eog code-oss
 ```sh
 apt-get install -y autoconf build-essential gcc gcc-multilib gcc-mingw-w64-i686 libssl-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncursesw5-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev make python2-dev python3-dev tk-dev wine xz-utils zlib1g-dev
 ```
+
+### Configuration of sshd.config
+@todo document this
+
+No documentation currently available... read the code
