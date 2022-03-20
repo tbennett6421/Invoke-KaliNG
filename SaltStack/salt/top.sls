@@ -8,3 +8,4 @@ base:
     - kali/dirs
     - kali/git/pyenv
     - kali/pip
+    - kali/powerlevel10k
