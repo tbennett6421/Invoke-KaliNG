@@ -33,5 +33,5 @@ sudo apt-get install salt-common
 Once salt-common is installed, one of the utilities it provides is `salt-call`. The following is how to call the salt engine in masterless mode and give it our codified instructions.
 
 ```sh
-salt-call --local state.apply --file-root=SaltStack/salt --pillar-root=SaltStack/pillar
+salt-call --local state.apply --file-root SaltStack/salt --pillar-root SaltStack/pillar
 ```
