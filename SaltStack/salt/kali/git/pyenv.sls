@@ -36,3 +36,23 @@
     - require_in:
       - file: {{state_id}}//{{f}}.config_init
 {% endfor %}
+
+{% for f in ['/root/.zshrc'] %}
+{{state_id}}//{{f}}.config_init:
+  file.blockreplace:
+    - name: {{f}}
+    - marker_start: "## BEGIN saltstack modified config: <pyenv> -DO-NOT-EDIT- --"
+    - marker_end: "## END saltstack modified config: <pyenv> -DO-NOT-EDIT- --"
+    - append_if_not_found: True
+    - show_changes: True
+    - backup: .salt.bkup
+
+{{state_id}}//{{f}}.config_content:
+  file.accumulated:
+    - name: {{state_id}}//{{f}}.config_content
+    - filename: {{f}}
+    - text: |
+          eval "$(pyenv init -)"
+    - require_in:
+      - file: {{state_id}}//{{f}}.config_init
+{% endfor %}
