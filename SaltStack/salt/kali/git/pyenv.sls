@@ -82,7 +82,7 @@
     - name: pyenv virtualenv 2.7.18 kali-py2
     - creates: /kaliNG/.pyenv/versions/kali-py2
 
-{{state_id}}//git-pyenv-python2-venv:
+{{state_id}}//git-pyenv-python3-venv:
   cmd.run:
     - name: pyenv virtualenv 3.9.10 kali-py3
     - creates: /kaliNG/.pyenv/versions/kali-py3
