@@ -9,3 +9,5 @@ base:
     - kali/git/pyenv
     - kali/pip
     - kali/git/powerlevel10k
+    - kali/git/rlwrap
+    - kali/git/nfsshell
