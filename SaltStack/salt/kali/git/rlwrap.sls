@@ -6,6 +6,11 @@
     - target: /kaliNG/git/rlwrap
     - user: root
 
-{{state_id}}//make:
+{{state_id}}//autoconf:
   cmd.run:
-    - name: cd /kaliNG/git/rlwrap && ./configure && make clean && make
+    - name: cd /kaliNG/git/rlwrap && autoconf
+    - creates: /kaliNG/git/rlwrap/configure
+
+{{state_id}}//configure:
+  cmd.run:
+    - name: cd /kaliNG/git/rlwrap/ && ./configure
