@@ -12,7 +12,7 @@
   file.managed:
     - name: /root/.tmux.conf
     - source: salt://files/kaliNG/tmux.conf
-    - source_hash: sha1=df3343fe6e1c54db9ab0cdb327daf69ca9a4f9e1
+    - source_hash: sha1=3f41533225304540981d2536e82bb66e0120186d
 
 {{state_id}}//vim-conf:
   file.managed:
