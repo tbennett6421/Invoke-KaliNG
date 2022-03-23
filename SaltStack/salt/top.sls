@@ -3,6 +3,7 @@ base:
     - core/config/upgrades
     - core/config/users
     - core/config/software
+    - core/config/configurations
     - core/config/ssh/sshd
     - core/config/ssh/sshd_config
     - kali/dirs
