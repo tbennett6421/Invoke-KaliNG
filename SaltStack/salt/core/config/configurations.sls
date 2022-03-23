@@ -10,13 +10,13 @@
 
 {{state_id}}//tmux-conf:
   file.managed:
-    - name: /kaliNG/.tmux.conf
+    - name: /root/.tmux.conf
     - source: salt://files/kaliNG/tmux.conf
     - source_hash: sha1=df3343fe6e1c54db9ab0cdb327daf69ca9a4f9e1
 
 {{state_id}}//vim-conf:
   file.managed:
-    - name: /kaliNG/.vimrc
+    - name: /root/.vimrc
     - source: salt://files/kaliNG/vimrc
     - source_hash: sha1=5f809db9580d5c1e658f0418b3dd434862c5651e
 
