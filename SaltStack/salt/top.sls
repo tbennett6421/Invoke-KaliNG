@@ -4,6 +4,7 @@ base:
     - core/config/users
     - core/config/software
     - core/config/configurations
+    - core/config/preferred-apps
     - core/config/ssh/sshd
     - core/config/ssh/sshd_config
     - kali/dirs

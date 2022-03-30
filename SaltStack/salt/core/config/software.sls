@@ -35,6 +35,7 @@
     - pkgs:
       - eog
       - code-oss
+      - gnome-terminal
 
 {{state_id}}//build-tools.packages:
   pkg.installed:
