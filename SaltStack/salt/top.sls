@@ -9,6 +9,7 @@ base:
     - core/config/ssh/sshd_config
     - kali/dirs
     - kali/git/myrepos
+    - kali/configure-games
     - kali/git/pyenv
     - kali/pip
     - kali/git/powerlevel10k
