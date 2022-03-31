@@ -1,0 +1,15 @@
+## Move to home
+cd /kaliNG/
+
+## Print MOTD
+if [ "$(command -v fortune)" ] ; then
+    if [ "$(command -v cowsay)" ] ; then
+        if [ "$(command -v lolcat)" ] ; then
+            fortune -a -c -s -n 100 | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) | lolcat
+        else
+            fortune -a -c -s -n 100 | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
+        fi
+    else
+        fortune -a -c -s -n 100
+    fi
+fi

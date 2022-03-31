@@ -1,5 +1,12 @@
 {% set state_id = "core@config/software.sls" %}
 
+{{state_id}}//fun.packages:
+  pkg.installed:
+    - pkgs:
+      - fortune
+      - cowsay
+      - lolcat
+
 {{state_id}}//net.packages:
   pkg.installed:
     - pkgs:
