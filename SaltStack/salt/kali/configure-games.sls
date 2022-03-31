@@ -1,4 +1,4 @@
-{% set state_id = "kali@dirs.sls" %}
+{% set state_id = "kali@configure-games.sls" %}
 {% set src = "/kaliNG/git/linux-utils/unified-shell/skel" %}
 
 {{state_id}}//cows:
