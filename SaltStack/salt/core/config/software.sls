@@ -3,7 +3,7 @@
 {{state_id}}//fun.packages:
   pkg.installed:
     - pkgs:
-      - fortune
+      - fortune-mod
       - cowsay
       - lolcat
 
