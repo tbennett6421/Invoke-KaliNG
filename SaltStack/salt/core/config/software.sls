@@ -4,6 +4,8 @@
   pkg.installed:
     - pkgs:
       - fortune-mod
+      - fortune-off
+      - fortunes-bofh-excuses
       - cowsay
       - lolcat
 
