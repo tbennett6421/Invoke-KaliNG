@@ -1,7 +1,7 @@
 {% set state_id = "kali@configure-games.sls" %}
 {% set src = "/kaliNG/git/linux-utils/unified-shell/skel" %}
 {% set cows_dir = "/usr/share/cowsay/" %}
-{% set fortune_dir = "/usr/share/games/fortunes" %}
+{% set fortune_dir = "/usr/share/games/fortunes/" %}
 
 {{state_id}}//cows:
   rsync.synchronized:
@@ -18,5 +18,5 @@
 {% for f in ['zippy', 'zippy.dat', 'zippy.u8'] %}
 {{state_id}}//remove-{{f}}:
   file.absent:
-    - name: "{{fortune_dir}}/{{f}}"
+    - name: "{{fortune_dir}}{{f}}"
 {% endfor %}
