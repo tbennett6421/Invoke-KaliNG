@@ -1,14 +1,22 @@
 {% set state_id = "kali@configure-games.sls" %}
 {% set src = "/kaliNG/git/linux-utils/unified-shell/skel" %}
+{% set cows_dir = "/usr/share/cowsay/" %}
+{% set fortune_dir = "/usr/share/games/fortunes" %}
 
 {{state_id}}//cows:
   rsync.synchronized:
-    - name: /usr/share/cowsay/
-    - source: {{src}}/usr/share/cowsay/
+    - name: "{{cows_dir}}"
+    - source: "{{src}}{{cows_dir}}"
     - delete: True
 
-{{state_id}}//kaliNG-git:
-  file.directory:
-    - name: /usr/share/games/fortunes
-    - source: {{src}}/usr/share/games/fortunes
+{{state_id}}//fortunes:
+  rsync.synchronized:
+    - name: "{{fortune_dir}}"
+    - source: "{{src}}{{fortune_dir}}"
     - delete: False
+
+{% for f in ['zippy', 'zippy.dat', 'zippy.u8'] %}
+{{state_id}}//remove-zippy:
+  file.absent:
+    - name: "{{fortune_dir}}/{{f}}"
+{% endfor %}
