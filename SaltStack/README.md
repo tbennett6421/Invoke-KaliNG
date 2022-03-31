@@ -34,4 +34,5 @@ Once salt-common is installed, one of the utilities it provides is `salt-call`. 
 
 ```sh
 salt-call --local state.apply --file-root SaltStack/salt --pillar-root SaltStack/pillar
+git pull && salt-call --local state.apply --file-root SaltStack/salt --pillar-root SaltStack/pillar --out-file output.state --no-color
 ```
