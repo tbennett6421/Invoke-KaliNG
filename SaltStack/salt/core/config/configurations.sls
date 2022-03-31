@@ -78,3 +78,9 @@
     - name: "{{ZCUST_DIR}}/.my_sh_prompt"
     - source: salt://files/kaliNG/my_sh_prompt
     - source_hash: sha1=5f915841b5b187d679de9a004da2e11057c98678
+
+{{state_id}}//zsh_loadingpoint:
+  file.managed:
+    - name: "{{ZCUST_LP}}"
+    - source: salt://files/kaliNG/loading_point.zsh
+    - source_hash: sha1=654369b70121c13ae91b8bd05b402fc9e71b29a1
