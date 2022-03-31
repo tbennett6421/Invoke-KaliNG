@@ -16,7 +16,7 @@
     - delete: False
 
 {% for f in ['zippy', 'zippy.dat', 'zippy.u8'] %}
-{{state_id}}//remove-zippy:
+{{state_id}}//remove-{{f}}:
   file.absent:
     - name: "{{fortune_dir}}/{{f}}"
 {% endfor %}
